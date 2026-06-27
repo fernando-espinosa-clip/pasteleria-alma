@@ -1,0 +1,16 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-turquesa: #29ABE2;
+  --color-rosa: #F06EB5;
+  --color-crema: #FAF7F2;
+  --color-oscuro: #1C1009;
+  --color-texto: #1A1A1A;
+  --color-whatsapp: #25D366;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #1A1A1A;
+}

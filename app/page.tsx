@@ -9,8 +9,8 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
-      <FeaturedCakes />
       <PromoSection />
+      <FeaturedCakes />
       <HomeCTA />
     </>
   )

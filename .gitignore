@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.idea/
+
+# OMC / superpowers state
+.omc/
+.playwright-mcp/
+.superpowers/
+
+# local dev artifacts
+images/
+crawl-*.json
+screenshot-*.jpeg
+screenshot-*.png
+SITIO_WEB_INFO.md
+app/page.module.css

@@ -2,6 +2,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Clock, Globe } from 'lucide-react'
+import { NAV_LINKS } from '@/lib/nav'
+import CurrentYear from '@/components/shared/CurrentYear'
 
 export default function Footer() {
   return (
@@ -29,12 +31,7 @@ export default function Footer() {
               Navegación
             </h3>
             <ul className="space-y-2 text-sm text-crema/70">
-              {[
-                { href: '/', label: 'Inicio' },
-                { href: '/menu', label: 'Menú' },
-                { href: '/galeria', label: 'Galería' },
-                { href: '/contacto', label: 'Contacto' },
-              ].map((l) => (
+              {NAV_LINKS.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="hover:text-turquesa transition-colors">
                     {l.label}
@@ -78,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-crema/40">
-          © {new Date().getFullYear()} Repostería Alma · Tepic, Nayarit
+          © <CurrentYear /> Repostería Alma · Tepic, Nayarit
         </div>
       </div>
     </footer>

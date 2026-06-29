@@ -109,7 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WhatsAppFAB />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
       </body>
     </html>

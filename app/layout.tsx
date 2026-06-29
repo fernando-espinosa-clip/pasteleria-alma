@@ -30,8 +30,11 @@ export const metadata: Metadata = {
     'Repostería fina artesanal desde 1980 en Tepic, Nayarit. Pasteles, pays y postres hechos con amor. Pedidos al (311) 210-8077.',
   manifest: '/manifest.json',
   icons: {
-    icon: '/favicon.jpg',
-    shortcut: '/favicon.jpg',
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48', type: 'image/x-icon' },
+      { url: '/favicon.jpg', type: 'image/jpeg' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.jpg',
     other: [
       { rel: 'apple-touch-icon-precomposed', url: '/apple-touch-icon.jpg' },

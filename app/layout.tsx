@@ -24,9 +24,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pasteleria-alma.vercel.app'),
   title: 'Repostería Alma · Tepic, Nayarit',
   description:
     'Repostería fina artesanal desde 1980 en Tepic, Nayarit. Pasteles, pays y postres hechos con amor. Pedidos al (311) 210-8077.',
+  icons: {
+    icon: '/favicon.jpg',
+  },
   openGraph: {
     title: 'Repostería Alma · Tepic, Nayarit',
     description: 'Pasteles y postres artesanales desde 1980.',

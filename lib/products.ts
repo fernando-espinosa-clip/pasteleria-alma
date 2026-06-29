@@ -283,8 +283,13 @@ export const WA_NUMBER = '5213111358437'
 export const WA_GENERIC = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hola, me gustaría hacer un pedido en Repostería Alma.')}`
 export const TEL = 'tel:+523112108077'
 
-export function waLink(productName: string): string {
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hola, me interesa pedir el ${productName}.`)}`
+const WA_MESSAGES = {
+  order: (name: string) => `Hola, quisiera hacer un *pedido* del ${name}. ¿Cuál es la disponibilidad y tiempo de entrega?`,
+  info:  (name: string) => `Hola, me gustaría saber más información sobre el ${name}. ¿Me pueden ayudar?`,
+}
+
+export function waLink(productName: string, intent: 'order' | 'info' = 'order'): string {
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGES[intent](productName))}`
 }
 
 export function formatPrice(price: number): string {

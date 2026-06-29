@@ -28,6 +28,10 @@ export function getPromoBySlug(slug: string): Promo | undefined {
   return promotions.find((p) => p.slug === slug && p.active)
 }
 
-export function promoWaLink(promo: Promo): string {
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(promo.waMessage)}`
+export function promoWaLink(promo: Promo, intent: 'order' | 'info' = 'order'): string {
+  const message =
+    intent === 'order'
+      ? promo.waMessage
+      : `Hola, me gustaría saber más información sobre *${promo.title}*. ¿Me pueden ayudar?`
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`
 }

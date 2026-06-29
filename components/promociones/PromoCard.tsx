@@ -56,13 +56,22 @@ export default function PromoCard({ promo, index = 0 }: Props) {
         {/* CTAs */}
         <div className="mt-auto flex flex-col gap-2">
           <a
-            href={promoWaLink(promo)}
+            href={promoWaLink(promo, 'order')}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 rounded-full bg-whatsapp py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             <MessageCircle size={16} />
             {promo.cta}
+          </a>
+          <a
+            href={promoWaLink(promo, 'info')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-full border border-rosa py-2.5 text-sm font-semibold text-rosa transition-colors hover:bg-rosa hover:text-white"
+          >
+            <MessageCircle size={16} />
+            Más información
           </a>
           <Link
             href={`/promociones/${promo.slug}`}

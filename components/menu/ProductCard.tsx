@@ -80,16 +80,27 @@ export default function ProductCard({ product }: Props) {
           )}
         </div>
 
-        {/* CTA */}
-        <a
-          href={waLink(name)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-rosa py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-        >
-          <MessageCircle size={16} />
-          Pedir por WhatsApp
-        </a>
+        {/* CTAs */}
+        <div className="flex flex-col gap-2">
+          <a
+            href={waLink(name, 'order')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <MessageCircle size={16} />
+            Hacer pedido
+          </a>
+          <a
+            href={waLink(name, 'info')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full items-center justify-center gap-2 rounded-full border border-rosa py-2 text-sm font-semibold text-rosa transition-colors hover:bg-rosa hover:text-white"
+          >
+            <MessageCircle size={16} />
+            Más información
+          </a>
+        </div>
       </div>
     </motion.div>
   )

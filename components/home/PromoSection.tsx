@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { getActivePromos } from '@/lib/promotions'
+import { getHomePromos } from '@/lib/promotions'
 import PromoCard from '@/components/promociones/PromoCard'
 
 export default function PromoSection() {
-  const promos = getActivePromos()
+  const promos = getHomePromos()
   if (promos.length === 0) return null
 
   return (

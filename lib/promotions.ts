@@ -8,6 +8,7 @@ import rawPromos from '@/data/promotions.json'
 export type Promo = {
   slug: string
   active: boolean
+  showInHome: boolean
   title: string
   tagline: string
   description: string
@@ -22,6 +23,10 @@ export const promotions: Promo[] = rawPromos as Promo[]
 
 export function getActivePromos(): Promo[] {
   return promotions.filter((p) => p.active)
+}
+
+export function getHomePromos(): Promo[] {
+  return promotions.filter((p) => p.active && p.showInHome)
 }
 
 export function getPromoBySlug(slug: string): Promo | undefined {

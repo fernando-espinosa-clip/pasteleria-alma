@@ -2,6 +2,7 @@
   {
     "slug": "coyotitas",
     "active": true,
+    "showInHome": true,
     "title": "Coyotitas Artesanales",
     "tagline": "El antojo perfecto para compartir",
     "description": "Delicadas hojaldres hechos a mano, rellenos de cajeta cremosa o pasta de guayaba casera. Crujientes por fuera, suaves por dentro y completamente adictivos. Caja de 16 piezas — ideales para llevar a la oficina, regalar o darte un gusto bien merecido.",
@@ -18,6 +19,7 @@
   {
     "slug": "choux",
     "active": true,
+    "showInHome": true,
     "title": "Caja de Choux",
     "tagline": "Dulce elegancia en 30 piezas",
     "description": "Pasta choux esponjosa y ligera, rellena de crema pastelera y espolvoreada con azúcar glass. 30 piezas presentadas en caja para regalar o para endulzar cualquier reunión. La repostería fina de siempre, en el tamaño perfecto para compartir.",
@@ -34,6 +36,7 @@
   {
     "slug": "pastel-personalizado",
     "active": true,
+    "showInHome": true,
     "title": "Pastel Personalizado",
     "tagline": "Tu celebración, a tu manera",
     "description": "Diseña el pastel de tus sueños con letras o números en el sabor que más te guste. Ideal para cumpleaños, graduaciones, aniversarios o cualquier ocasión que merece ser recordada. Pedido anticipado recomendado para asegurar tu fecha.",

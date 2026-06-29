@@ -1,5 +1,6 @@
 // components/menu/ProductCard.tsx
 'use client'
+import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
@@ -8,7 +9,8 @@ import { type Product, waLink, formatPrice } from '@/lib/products'
 type Props = { product: Product }
 
 export default function ProductCard({ product }: Props) {
-  const { name, priceSmall, priceLarge, priceSingle, servingsSmall, servingsLarge, image } = product
+  const { name, description, priceSmall, priceLarge, priceSingle, servingsSmall, servingsLarge, image } = product
+  const [expanded, setExpanded] = useState(false)
 
   return (
     <motion.div
@@ -37,6 +39,21 @@ export default function ProductCard({ product }: Props) {
         >
           {name}
         </h3>
+
+        {/* Descripción */}
+        {description && (
+          <div className="mb-3">
+            <p className={`text-sm text-crema/70 leading-relaxed ${expanded ? '' : 'line-clamp-2'}`}>
+              {description}
+            </p>
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-1 text-xs text-turquesa hover:underline focus:outline-none"
+            >
+              {expanded ? 'Ver menos' : 'Ver más'}
+            </button>
+          </div>
+        )}
 
         {/* Precios */}
         <div className="mb-4 space-y-1 text-sm">

@@ -6,8 +6,14 @@ import { motion } from 'framer-motion'
 import { galleryImages } from '@/lib/gallery'
 import Lightbox from './Lightbox'
 
+const INITIAL_COUNT = 12
+
 export default function GalleryGrid() {
   const [selected, setSelected] = useState<number | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const visible = showAll ? galleryImages : galleryImages.slice(0, INITIAL_COUNT)
+  const remaining = galleryImages.length - INITIAL_COUNT
 
   const prev = () =>
     setSelected((i) => (i !== null ? (i - 1 + galleryImages.length) % galleryImages.length : null))
@@ -21,7 +27,7 @@ export default function GalleryGrid() {
         className="columns-1 gap-4 sm:columns-2 lg:columns-3"
         style={{ columnFill: 'balance' }}
       >
-        {galleryImages.map((img, i) => (
+        {visible.map((img, i) => (
           <motion.button
             key={img.src}
             className="mb-4 block w-full overflow-hidden rounded-xl"
@@ -41,6 +47,17 @@ export default function GalleryGrid() {
           </motion.button>
         ))}
       </div>
+
+      {!showAll && (
+        <div className="mt-8 text-center">
+          <button
+            onClick={() => setShowAll(true)}
+            className="rounded-full border-2 border-turquesa px-8 py-3 text-sm font-semibold text-turquesa transition-colors hover:bg-turquesa hover:text-white"
+          >
+            Ver {remaining} fotos más
+          </button>
+        </div>
+      )}
 
       <Lightbox
         images={galleryImages}

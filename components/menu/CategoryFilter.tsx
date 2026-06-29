@@ -32,6 +32,13 @@ export default function CategoryFilter() {
         ))}
       </div>
 
+      {/* Título accesible para screen readers (mantiene jerarquía h1→h2→h3) */}
+      <h2 className="sr-only">
+        {active === 'todos'
+          ? 'Todos nuestros productos'
+          : CATEGORIES.find((c) => c.value === active)?.label ?? 'Productos'}
+      </h2>
+
       {/* Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((product) => (

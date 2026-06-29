@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Clock, Globe } from 'lucide-react'
 import { NAV_LINKS } from '@/lib/nav'
+import CurrentYear from '@/components/shared/CurrentYear'
 
 export default function Footer() {
   return (
@@ -74,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-crema/40">
-          © {new Date().getFullYear()} Repostería Alma · Tepic, Nayarit
+          © <CurrentYear /> Repostería Alma · Tepic, Nayarit
         </div>
       </div>
     </footer>

@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   title: 'Repostería Alma · Tepic, Nayarit',
   description:
     'Repostería fina artesanal desde 1980 en Tepic, Nayarit. Pasteles, pays y postres hechos con amor. Pedidos al (311) 210-8077.',
+  manifest: '/manifest.json',
   icons: {
     icon: '/favicon.jpg',
     shortcut: '/favicon.jpg',

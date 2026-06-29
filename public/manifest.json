@@ -1,0 +1,23 @@
+{
+  "name": "Repostería Alma",
+  "short_name": "Alma",
+  "description": "Repostería fina artesanal desde 1980 en Tepic, Nayarit.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FAF7F2",
+  "theme_color": "#29ABE2",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.jpg",
+      "sizes": "any",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/favicon.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

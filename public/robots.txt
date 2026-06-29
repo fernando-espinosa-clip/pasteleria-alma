@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pasteleria-alma.vercel.app/sitemap.xml

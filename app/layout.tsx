@@ -23,9 +23,15 @@ const inter = Inter({
   display: 'swap',
 })
 
+const BASE_URL = 'https://pasteleria-alma.vercel.app'
+const OG_IMAGE = '/images/logo/299313316_481075924022133_5916712976143065516_n.jpg'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pasteleria-alma.vercel.app'),
-  title: 'Repostería Alma · Tepic, Nayarit',
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: 'Repostería Alma · Tepic, Nayarit',
+    template: '%s · Repostería Alma',
+  },
   description:
     'Repostería fina artesanal desde 1980 en Tepic, Nayarit. Pasteles, pays y postres hechos con amor. Pedidos al (311) 210-8077.',
   manifest: '/manifest.json',
@@ -41,10 +47,53 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
+    type: 'website',
+    locale: 'es_MX',
+    url: BASE_URL,
+    siteName: 'Repostería Alma',
     title: 'Repostería Alma · Tepic, Nayarit',
-    description: 'Pasteles y postres artesanales desde 1980.',
-    images: ['/images/logo/299313316_481075924022133_5916712976143065516_n.jpg'],
+    description: 'Pasteles y postres artesanales desde 1980 en Tepic, Nayarit.',
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Repostería Alma' }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Repostería Alma · Tepic, Nayarit',
+    description: 'Pasteles y postres artesanales desde 1980 en Tepic, Nayarit.',
+    images: [OG_IMAGE],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Bakery',
+  name: 'Repostería Alma',
+  description: 'Repostería fina artesanal desde 1980 en Tepic, Nayarit. Pasteles, pays y postres hechos con amor.',
+  url: 'https://pasteleria-alma.vercel.app',
+  telephone: '+523112108077',
+  image: 'https://pasteleria-alma.vercel.app/images/logo/299313316_481075924022133_5916712976143065516_n.jpg',
+  priceRange: '$$',
+  servesCuisine: 'Repostería artesanal',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Calle Roble #298, entre Pino y Capomo, Col. San Juan',
+    addressLocality: 'Tepic',
+    addressRegion: 'Nayarit',
+    addressCountry: 'MX',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 21.5006,
+    longitude: -104.8946,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '19:30',
+    },
+  ],
+  sameAs: ['https://www.facebook.com/pasteleriaalmatepic'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -58,6 +107,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <WhatsAppFAB />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   )

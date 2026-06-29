@@ -3,9 +3,21 @@ import type { Metadata } from 'next'
 import CategoryFilter from '@/components/menu/CategoryFilter'
 
 export const metadata: Metadata = {
-  title: 'Menú · Repostería Alma — Tepic, Nayarit',
+  title: 'Menú',
   description:
-    'Catálogo completo de pasteles, pays y postres de Repostería Alma. Pasteles artesanales con precios en Tepic, Nayarit.',
+    'Catálogo completo de pasteles, pays y postres artesanales de Repostería Alma con precios. Tres Leches, Snickers, Alemán, Cheesecake y más en Tepic, Nayarit.',
+  openGraph: {
+    title: 'Menú · Repostería Alma',
+    description: 'Catálogo de pasteles, pays y postres artesanales con precios en Tepic, Nayarit.',
+    url: 'https://pasteleria-alma.vercel.app/menu',
+    images: [{ url: '/images/pasteles/597242972_1421474129982303_2133308616620734930_n.jpg', alt: 'Pasteles Repostería Alma' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Menú · Repostería Alma',
+    description: 'Catálogo de pasteles, pays y postres artesanales con precios en Tepic, Nayarit.',
+    images: ['/images/pasteles/597242972_1421474129982303_2133308616620734930_n.jpg'],
+  },
 }
 
 export default function MenuPage() {

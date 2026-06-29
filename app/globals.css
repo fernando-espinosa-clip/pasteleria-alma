@@ -14,3 +14,7 @@ body {
   background-color: #FAF7F2;
   color: #1A1A1A;
 }
+
+h1, h2, h3 {
+  font-family: var(--font-playfair), serif;
+}

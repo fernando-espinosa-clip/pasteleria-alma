@@ -21,7 +21,7 @@ export default function HomeCTA() {
             href={WA_GENERIC}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3 font-semibold text-white transition-opacity hover:opacity-90"
+            className="flex items-center gap-2 rounded-full bg-whatsapp px-8 py-3 font-semibold text-white transition-opacity hover:opacity-90"
           >
             <MessageCircle size={18} />
             Ordenar por WhatsApp

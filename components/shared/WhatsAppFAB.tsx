@@ -10,7 +10,7 @@ export default function WhatsAppFAB() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Ordenar por WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-lg"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-whatsapp px-4 py-3 text-white shadow-lg"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: 'spring', stiffness: 200 }}

@@ -33,10 +33,7 @@ export default function ProductCard({ product }: Props) {
 
       {/* Contenido */}
       <div className="p-4">
-        <h3
-          className="mb-2 text-3xl text-rosa"
-          style={{ fontFamily: 'var(--font-dancing)' }}
-        >
+        <h3 className="font-dancing mb-2 text-3xl text-rosa">
           {name}
         </h3>
 

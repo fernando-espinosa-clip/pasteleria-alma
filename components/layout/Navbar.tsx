@@ -7,13 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { WA_GENERIC } from '@/lib/products'
-
-const links = [
-  { href: '/', label: 'Inicio' },
-  { href: '/menu', label: 'Menú' },
-  { href: '/galeria', label: 'Galería' },
-  { href: '/contacto', label: 'Contacto' },
-]
+import { NAV_LINKS } from '@/lib/nav'
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -22,7 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', handler)
+    window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
@@ -42,14 +36,14 @@ export default function Navbar() {
             height={48}
             className="rounded-full object-cover"
           />
-          <span className="hidden text-lg font-semibold text-turquesa sm:block" style={{ fontFamily: 'serif' }}>
+          <span className="font-playfair hidden text-lg font-semibold text-turquesa sm:block">
             Repostería Alma
           </span>
         </Link>
 
         {/* Desktop links */}
         <nav className="hidden items-center gap-6 md:flex">
-          {links.map((l) => (
+          {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -74,7 +68,9 @@ export default function Navbar() {
         <button
           className="md:hidden"
           onClick={() => setOpen(!open)}
-          aria-label="Menú"
+          aria-label="Menú de navegación"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -84,13 +80,14 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.nav
+            id="mobile-menu"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
             className="border-t border-gray-100 bg-crema px-4 pb-4 md:hidden"
           >
-            {links.map((l) => (
+            {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}

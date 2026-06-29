@@ -26,6 +26,7 @@ export default function GalleryGrid() {
             key={img.src}
             className="mb-4 block w-full overflow-hidden rounded-xl"
             onClick={() => setSelected(i)}
+            aria-label={`Ver imagen: ${img.alt}`}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >

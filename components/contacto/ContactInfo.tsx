@@ -42,7 +42,7 @@ export default function ContactInfo() {
         {/* Mapa */}
         <div className="overflow-hidden rounded-2xl shadow-lg">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.123456789!2d-104.8956!3d21.5045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDMwJzE2LjIiTiAxMDTCsDUzJzQ0LjIiVw!5e0!3m2!1ses!2smx!4v1234567890!5m2!1ses!2smx&q=Roble+298,+Colonia+San+Juan,+Tepic,+Nayarit"
+            src="https://maps.google.com/maps?q=Calle+Roble+%23298,+Colonia+San+Juan,+Tepic,+Nayarit,+Mexico&z=17&output=embed&hl=es"
             width="100%"
             height="420"
             style={{ border: 0 }}
@@ -55,10 +55,7 @@ export default function ContactInfo() {
 
         {/* Datos */}
         <div className="space-y-6">
-          <h2
-            className="text-3xl text-texto"
-            style={{ fontFamily: 'var(--font-playfair)' }}
-          >
+          <h2 className="font-playfair text-3xl text-texto">
             Encuéntranos
           </h2>
 
@@ -73,7 +70,7 @@ export default function ContactInfo() {
                   <a
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
-                    rel="noopener noreferrer"
+                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="whitespace-pre-line text-sm text-texto hover:text-turquesa"
                   >
                     {content}
@@ -90,7 +87,7 @@ export default function ContactInfo() {
             href={WA_GENERIC}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] py-3 font-semibold text-white transition-opacity hover:opacity-90"
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp py-3 font-semibold text-white transition-opacity hover:opacity-90"
           >
             <MessageCircle size={20} />
             Ordenar por WhatsApp

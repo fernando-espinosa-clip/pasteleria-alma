@@ -1,15 +1,16 @@
 // components/menu/CategoryFilter.tsx
 'use client'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { products, CATEGORIES, type Category } from '@/lib/products'
 import ProductCard from './ProductCard'
 
 export default function CategoryFilter() {
   const [active, setActive] = useState<Category | 'todos'>('todos')
 
-  const filtered = active === 'todos'
-    ? products
-    : products.filter((p) => p.category === active)
+  const filtered = useMemo(
+    () => active === 'todos' ? products : products.filter((p) => p.category === active),
+    [active]
+  )
 
   return (
     <div>
@@ -19,6 +20,7 @@ export default function CategoryFilter() {
           <button
             key={value}
             onClick={() => setActive(value)}
+            aria-pressed={active === value}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
               active === value
                 ? 'bg-turquesa text-white'
@@ -29,6 +31,13 @@ export default function CategoryFilter() {
           </button>
         ))}
       </div>
+
+      {/* Título accesible para screen readers (mantiene jerarquía h1→h2→h3) */}
+      <h2 className="sr-only">
+        {active === 'todos'
+          ? 'Todos nuestros productos'
+          : CATEGORIES.find((c) => c.value === active)?.label ?? 'Productos'}
+      </h2>
 
       {/* Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
